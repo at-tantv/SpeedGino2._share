@@ -58,6 +58,17 @@
             text-decoration: underline;
         }
 
+        /* ================= CSS FIX CĂN LỀ TRÁI CHO LIÊN HỆ ================= */
+        .contact-list {
+            list-style: none !important;
+            padding-left: 0 !important;
+            margin-left: 0 !important;
+        }
+        .contact-list li {
+            text-align: left !important;
+            margin-bottom: 8px;
+        }
+
         /* ================= STYLE DROPDOWN TIÊU CHUẨN (CSS THUẦN) ================= */
         .header-bar {
             display: flex;
@@ -76,11 +87,9 @@
             position: relative;
             display: inline-block;
         }
-        /* Ẩn checkbox làm mẹo kích hoạt nút */
         .dropdown-check {
             display: none;
         }
-        /* Nút Dropdown UI cao cấp */
         .dropdown-label {
             background-color: #ffffff;
             color: #333;
@@ -99,7 +108,6 @@
             background-color: #f9f9f9;
             border-color: #007bff;
         }
-        /* Menu thả xuống chứa các lựa chọn ngôn ngữ */
         .dropdown-menu {
             display: none;
             position: absolute;
@@ -125,17 +133,16 @@
             background-color: #edf2f7;
             color: #007bff;
         }
-        /* Kích hoạt hiển thị Menu khi chạm vào nút */
         .dropdown-check:checked ~ .dropdown-menu {
             display: block;
         }
 
         /* ================= LOGIC ĐIỀU PHỐI HIỂN THỊ NGÔN NGỮ BẰNG CSS ================= */
         .lang-content {
-            display: none; /* Ẩn toàn bộ mặc định */
+            display: none;
         }
         .footer-disclaimer {
-            display: none; /* Ẩn toàn bộ mặc định */
+            display: none;
             font-size: 11px;
             color: #999;
             max-width: 600px;
@@ -147,17 +154,14 @@
             text-align: left;
         }
         
-        /* HIỂN THỊ MẶC ĐỊNH: Tiếng Việt hiển thị khi chưa có tương tác neo tab */
         #lang-vi, #disclaimer-vi {
             display: block;
         }
-        /* KHI CHỌN NGÔN NGỮ KHÁC QUA THẺ HREF NEO TARGET */
         #lang-vi:target, #disclaimer-vi:target,
         #lang-en:target, #disclaimer-en:target,
         #lang-ja:target, #disclaimer-ja:target {
             display: block !important;
         }
-        /* Tự động tắt trạng thái mặc định của tiếng Việt nếu ngôn ngữ khác được Target */
         body:has(#lang-en:target) #lang-vi, body:has(#lang-en:target) #disclaimer-vi,
         body:has(#lang-ja:target) #lang-vi, body:has(#lang-ja:target) #disclaimer-vi {
             display: none !important;
@@ -196,7 +200,6 @@
 </head>
 <body>
 
-    <!-- Thanh chặn trên cùng chứa Tên App và Dropdown Ngôn Ngữ CSS -->
     <div class="header-bar">
         <div class="brand-title">Speed Gino2</div>
         
@@ -206,8 +209,7 @@
                 🌐 Language ▾
             </label>
             <div class="dropdown-menu">
-                <!-- Điều hướng Tab hiển thị bằng ID tương ứng -->
-                <a href="#lang-vi">🇻🇳 Tiếng Việt</a>
+                <a href="#lang-vi">🇲🇳 Tiếng Việt</a>
                 <a href="#lang-en">🇺🇸 English</a>
                 <a href="#lang-ja">🇯🇵 日本語</a>
             </div>
@@ -216,16 +218,13 @@
 
     <div class="content-wrapper">
 
-        <!-- ================================================================= -->
-        <!-- ======================= 1. TIẾNG VIỆT =========================== -->
-        <!-- ================================================================= -->
         <div id="lang-vi" class="lang-content">
             <h1>Chính Sách Quyền Riêng Tư cho Speed Gino2</h1>
             <p class="date">Cập nhật lần cuối: 4 tháng 6, 2026</p>
 
             <p>Cảm ơn bạn đã lựa chọn <strong>Speed Gino2</strong>, ứng dụng chuyên về ôn luyện thi được thiết kế nhằm giúp học viên học tập và thực hành hiệu quả cho kỳ thi <strong>Tokutei Gino 2</strong> (Kỹ năng đặc định ngành 2). Quyền riêng tư của bạn rất quan trọng đối với chúng tôi. Chính Sách Quyền Riêng Tư này giải thích cách chúng tôi thu thập, sử dụng, lưu trữ và bảo vệ thông tin của bạn khi bạn sử dụng ứng dụng di động của chúng tôi.</p>
 
-            <h3>1. Thông Information / Dữ Liệu Chúng Tôi Thu Thập</h3>
+            <h3>1. Thông Tin / Dữ Liệu Chúng Tôi Thu Thập</h3>
             <p>Chúng tôi cam kết chỉ thu thập các thông tin tối thiểu cần thiết để vận hành và nâng cao chất lượng trải nghiệm ứng dụng:</p>
             <ul>
                 <li><strong>Thông Tin Tài Khoản Người Dùng:</strong> Khi bạn đăng ký hoặc đăng nhập thông qua các phương thức được hỗ trợ (Email, Google, Apple ID), chúng tôi thu thập tên, địa chỉ email, ảnh đại diện nhằm xác định danh tính và đồng bộ hóa dữ liệu cá nhân.</li>
@@ -242,12 +241,11 @@
                 <li>Gửi thông báo kỹ thuật, cập nhật nội dung đề thi mới, cảnh báo bảo mật hoặc hỗ trợ giải đáp thắc mắc của người dùng.</li>
             </ul>
 
-            <h3>3. Cơ Sở Pháp Lý và Chia Sẻ Dữ Liệu Bên Thứ Ba</h3>
-            <p>Chúng tôi cam kết <strong>không bao giờ bán, cho thuê hoặc thương mại hóa</strong> thông tin cá nhân của bạn. Dữ liệu chỉ được chia sẻ với các đối tác cung cấp dịch vụ hạ tầng công nghệ thiết yếu tuân thủ nghiêm ngặt chuẩn bảo mật:</p>
+            <h3>3. Chia Sẻ Dữ Liệu Bên Thứ Ba</h3>
+            <p>Chúng tôi cam kết không bao giờ bán hoặc thương mại hóa thông tin cá nhân của bạn. Dữ liệu chỉ được chia sẻ với các đối tác cung cấp dịch vụ hạ tầng công nghệ thiết yếu tuân thủ nghiêm ngặt chuẩn bảo mật:</p>
             <ul>
                 <li><strong>Dịch vụ Lưu Trữ và Phân Tích (Google Firebase / Analytics):</strong> Giúp lưu trữ cơ sở dữ liệu học tập an toàn và theo dõi báo cáo lỗi kỹ thuật ẩn danh của app.</li>
-                <li><strong>Đối tác Quảng Cáo (Nếu có):</strong> Có thể sử dụng mã nhận dạng quảng cáo ẩn danh (IDFA/GAID) để hiển thị quảng cáo không định danh phù hợp, bạn hoàn toàn có thể tắt tính năng này trong cài đặt thiết bị.</li>
-                <li><strong>Yêu Cầu Pháp Lý:</strong> Chúng tôi có thể tiết lộ thông tin cá nhân nếu có yêu cầu bắt buộc bằng văn bản từ cơ quan thực thi pháp luật có thẩm quyền theo đúng quy định.</li>
+                <li><strong>Đối tác Quảng Cáo:</strong> Có thể sử dụng mã nhận dạng quảng cáo ẩn danh (IDFA/GAID) để hiển thị quảng cáo không định danh phù hợp, bạn hoàn toàn có thể tắt tính năng này trong cài đặt thiết bị.</li>
             </ul>
 
             <h3>4. Quyền Hạn Của Người Dùng & Yêu Cầu Xóa Dữ Liệu</h3>
@@ -258,17 +256,17 @@
             </ul>
 
             <h3>5. Bảo Mật Thông Tin Dữ Liệu</h3>
-            <p>Chúng tôi áp dụng các tiêu chuẩn mã hóa truyền tải dữ liệu tiên tiến (SSL/TLS) cùng quy trình kiểm soát truy cập nghiêm ngặt tại máy chủ để bảo vệ thông tin của bạn khỏi nguy cơ mất mát, rò rỉ, truy cập trái phép. Tuy nhiên, không có phương thức truyền tải internet nào an toàn tuyệt đối 100%, vì vậy chúng tôi không thể đảm bảo an ninh tuyệt đối.</p>
+            <p>Chúng tôi áp dụng các tiêu chuẩn mã hóa truyền tải dữ liệu tiên tiến (SSL/TLS) cùng quy trình kiểm soát truy cập nghiêm ngặt tại máy chủ để bảo vệ thông tin của bạn khỏi nguy cơ mất mát, rò rỉ, truy cập trái phép.</p>
 
             <h3>6. Quyền Riêng Tư Của Trẻ Em</h3>
-            <p>Ứng dụng Speed Gino2 hướng tới đối tượng người dùng là người trưởng thành có nhu cầu ôn thi chứng chỉ nghề nghiệp. Chúng tôi không chủ động thu thập bất kỳ thông tin cá nhân nào từ trẻ em dưới 13 tuổi. Nếu phát hiện trường hợp ngoài ý muốn, chúng tôi sẽ lập tức xóa bỏ dữ liệu khỏi hệ thống.</p>
+            <p>Ứng dụng Speed Gino2 hướng tới đối tượng người dùng là người trưởng thành có nhu cầu ôn thi chứng chỉ nghề nghiệp. Chúng tôi không chủ động thu thập bất kỳ thông tin cá nhân nào từ trẻ em dưới 13 tuổi.</p>
 
             <h3>7. Thay Đổi Chính Sách</h3>
             <p>Chính sách bảo mật này có thể sửa đổi để cập nhật các quy định luật pháp mới. Mọi chỉnh sửa sẽ có hiệu lực ngay khi được đăng tải lên trang này kèm mốc thời gian cập nhật cụ thể.</p>
 
             <h3>8. Thông Tin Liên Hệ Hỗ Trợ</h3>
             <p>Nếu bạn có câu hỏi, khiếu nại hoặc yêu cầu xử lý dữ liệu cá nhân, xin vui lòng liên hệ:</p>
-            <ul>
+            <ul class="contact-list">
                 <li><strong>Đơn vị chủ quản:</strong> Speed Gino2 Development Team</li>
                 <li><strong>Website chính thức:</strong> <a href="https://speedgino2.com/" target="_blank">https://speedgino2.com/</a></li>
                 <li><strong>Email tiếp nhận:</strong> <a href="mailto:diendong94@gmail.com">diendong94@gmail.com</a></li>
@@ -276,9 +274,6 @@
         </div>
 
 
-        <!-- ================================================================= -->
-        <!-- ======================= 2. ENGLISH ============================== -->
-        <!-- ================================================================= -->
         <div id="lang-en" class="lang-content">
             <h1>Privacy Policy for Speed Gino2</h1>
             <p class="date">Last updated: June 04, 2026</p>
@@ -286,7 +281,6 @@
             <p>Thank you for choosing <strong>Speed Gino2</strong>, a specialized exam preparation application designed to help students effectively study and practice for the <strong>Tokutei Gino 2</strong> (Specified Skilled Worker No. 2) examination. Your privacy is paramount to us. This Privacy Policy outlines how we collect, use, store, and safeguard your data when you interact with our mobile application.</p>
 
             <h3>1. Information and Data We Collect</h3>
-            <p>We only collect the minimum amount of data required to deliver and optimize your exam prep experience:</p>
             <ul>
                 <li><strong>User Account Information:</strong> When you register or log in via integrated services (Email, Google, Apple ID), we collect your name, email address, and profile picture to manage your identity.</li>
                 <li><strong>Learning Progress Metrics:</strong> The system logs your test history, Tokutei Gino 2 practice exam scores, studying time, incorrect answers, and performance statistics to serve personalized dashboards.</li>
@@ -294,7 +288,6 @@
             </ul>
 
             <h3>2. How We Use Your Information</h3>
-            <p>The information gathered is utilized strictly for the following purposes:</p>
             <ul>
                 <li>To operate, maintain, and deliver all features of the <strong>Speed Gino2</strong> application.</li>
                 <li>To synchronize your learning history and scores across multiple devices in real-time.</li>
@@ -303,32 +296,30 @@
             </ul>
 
             <h3>3. Legal Basis and Third-Party Data Sharing</h3>
-            <p>We hold a strict policy: <strong>we do not sell, rent, or trade</strong> your personal details with anyone. Data is shared only with vetted third-party infrastructure providers complying with international standards:</p>
+            <p>We hold a strict policy: we do not sell, rent, or trade your personal details with anyone. Data is shared only with vetted third-party infrastructure providers complying with international standards:</p>
             <ul>
                 <li><strong>Backend Infrastructure (Google Firebase / Analytics):</strong> To securely host student databases and process structural diagnostic crash data anonymously.</li>
-                <li><strong>Advertising Partners (If applicable):</strong> Anonymous advertising identifiers (IDFA/GAID) may be referenced to tailor promotional experiences. Users can toggle this off in mobile operating system settings.</li>
-                <li><strong>Compliance with Law:</strong> We may release user data if legally forced via valid subpoenas or judicial mandates under jurisdiction frameworks.</li>
+                <li><strong>Advertising Partners:</strong> Anonymous advertising identifiers (IDFA/GAID) may be referenced to tailor promotional experiences. Users can toggle this off in mobile operating system settings.</li>
             </ul>
 
             <h3>4. User Rights & Data Deletion Access</h3>
-            <p>You preserve full sovereignty over your information:</p>
             <ul>
                 <li>You can inspect and update your core profile traits within the app's user portal at any moment.</li>
                 <li><strong>Account Eradication Right:</strong> You hold the absolute entitlement to completely wipe your account and all corresponding historical study data from our system. You can execute this natively via the "Delete Account" option within app configurations or by lodging a request to our Support Email. This action is definitive and irreversible.</li>
             </ul>
 
             <h3>5. Data Security Infrastructure</h3>
-            <p>We deploy industrial-grade data transfer encryption protocol configurations (SSL/TLS) alongside strict administrative access controls to shelter records from unauthorized breaching. Note that no dynamic method over the web guarantees 100% security absolute armor.</p>
+            <p>We deploy industrial-grade data transfer encryption protocol configurations (SSL/TLS) alongside strict administrative access controls to shelter records from unauthorized breaching.</p>
 
             <h3>6. Children's Privacy Governance</h3>
-            <p>Speed Gino2 targets mature vocational examinees. We do not knowingly trap data profiles belonging to children aged under 13. If any accidental collection comes to light, we will remove it immediately.</p>
+            <p>Speed Gino2 targets mature vocational examinees. We do not knowingly trap data profiles belonging to children aged under 13.</p>
 
             <h3>7. Framework Amendments</h3>
             <p>This privacy declaration may change periodically. Amendments take immediate effect once uploaded onto this URL, marked with a new stamp date.</p>
 
             <h3>8. Communication & Support Contact</h3>
             <p>For processing inquiries, privacy claims, or data concerns, please contact us at:</p>
-            <ul>
+            <ul class="contact-list">
                 <li><strong>Developer Entity:</strong> Speed Gino2 Development Team</li>
                 <li><strong>Official Website:</strong> <a href="https://speedgino2.com/" target="_blank">https://speedgino2.com/</a></li>
                 <li><strong>Support Email:</strong> <a href="mailto:diendong94@gmail.com">diendong94@gmail.com</a></li>
@@ -336,17 +327,13 @@
         </div>
 
 
-        <!-- ================================================================= -->
-        <!-- ======================= 3. JAPANESE ============================= -->
-        <!-- ================================================================= -->
         <div id="lang-ja" class="lang-content">
             <h1>Speed Gino2 プライバシーポリシー</h1>
             <p class="date">最終更新日: 2026年6月4日</p>
 
-            <p><strong>Speed Gino2</strong>（特定技能2号試験対策アプリ）をご利用いただき、誠にありがとうございます。当アプリは、受験者が効率的に学習し、試験に合格できるよう設計された専門の学習ツールです。お客様のプライバシーは当社にとって非常に重要です。このプライバシーポリシーでは、当モバイルアプリケーションをご利用の際、お客様の情報をどのように収集、使用、保存、および保護するかについて説明します。</p>
+            <p><strong>Speed Gino2</strong>（特定技能2号試験対策アプリ）をご利用いただき、誠にありがとうございます。当アプリは、受験者が効率的に学習し、試験に合格できるよう設計された専門の学習ツールです。お客様のプライバシーは当社にとって非常に重要です。</p>
 
             <h3>1. 収集する情報とデータ</h3>
-            <p>当社は、最高の学習および試験対策体験を提供するために必要な最小限の情報のみを収集します：</p>
             <ul>
                 <li><strong>ユーザーアカウント情報：</strong> サポートされている方法（メール、Google、Apple ID）を介して登録またはログインする場合、ユーザーを識別しデータを同期するために、氏名、メールアドレス、プロフィール写真を収集します。</li>
                 <li><strong>学習進捗データ：</strong> パーソナライズされた学習ルートを表示するため、試験履歴、特定技能2号の模擬試験スコア、学習時間、間違えた問題、および統計データをシステムに記録します。</li>
@@ -354,41 +341,38 @@
             </ul>
 
             <h3>2. 情報の利用目的</h3>
-            <p>収集したデータは、以下のコア目的にのみ使用されます：</p>
             <ul>
-                <li><strong>Speed Gino2</strong> アプリケーションにおける特定技能2号試験対策機能の提供および維持。</li>
+                <li>Speed Gino2 アプリケーションにおける特定技能2号試験対策機能の提供および維持。</li>
                 <li>同一アカウントの異なるデバイス間での学習進捗のリアルタイム同期。</li>
                 <li>パフォーマンス分析、問題バンクの更新、および新しい学習支援機能の開発。</li>
                 <li>技術的な通知、新しい試験内容の更新、セキュリティアラート、またはユーザーサポートの送信。</li>
             </ul>
 
             <h3>3. 法的根拠と第三者とのデータ共有</h3>
-            <p>当社は、お客様の個人情報を<strong>第三者に販売、貸出、または商業化することは一切ありません</strong>。データは、厳格なセキュリティ基準を遵守する必須のテクノロジーインフラストラクチャパートナーとのみ共有されます：</p>
+            <p>当社は、お客様の個人情報を第三者に販売、貸出、または商業化することは一切ありません。データは、厳格なセキュリティ基準を遵守する必須のテクノロジーインフラストラクチャパートナーとのみ共有されます：</p>
             <ul>
-                <li><strong>ストレージおよび分析サービス（Google Firebase / Analytics）：</strong> 学習データベースを安全に保管し、匿名化されたアプリアプリのバグクラッシュレポートを追跡します。</li>
-                <li><strong>広告パートナー（該当する場合）：</strong> 適切な広告を表示するために匿名の広告識別子（IDFA/GAID）を参照する場合があります。ユーザーは端末の設定からこれを無効化できます。</li>
-                <li><strong>法的要請：</strong> 司法機関や管轄権を持つ法執行機関から有効な令状に基づき開示を求められた場合、法律に従ってデータを提示することがあります。</li>
+                <li><strong>ストレージおよび分析サービス（Google Firebase / Analytics）：</strong> 学習データベースを安全に保管し、匿名化されたアプリのバグクラッシュレポートを追跡します。</li>
+                <li><strong>広告パートナー：</strong> 適切な広告を表示するために匿名の広告識別子（IDFA/GAID）を参照する場合があります。ユーザーは端末の設定からこれを無効化できます。</li>
             </ul>
 
             <h3>4. ユーザーの権利とデータ削除の申請</h3>
-            <p>お客様は自身の個人情報に対して完全な管理権を有しています：</p>
             <ul>
                 <li>お客様は、アプリ内のマイページから直接、プロファイル情報を確認・編集できます。</li>
                 <li><strong>アカウントの完全削除権：</strong> お客様は、システムからアカウントおよび関連するすべての学習履歴データをいつでも完全に消去する権利を有します。アプリの設定内にある「アカウント削除」機能を使用するか、サポートメールに直接ご連絡いただくことで実行できます。削除されたデータは永久に消え、復元することはできません。</li>
             </ul>
 
             <h3>5. データのセキュリティ保護</h3>
-            <p>当社は、データの紛失、漏洩、不正アクセスを防ぐため、高度な通信暗号化プロトコル（SSL/TLS）とサーバーでの厳格なアクセス制御を導入しています。ただし、インターネット上の通信において100％の安全を保証できる方法はないため、絶対的なセキュリティを確約することはできません。</p>
+            <p>当社は、データの紛失、漏洩、不正アクセスを防ぐため、高度な通信暗号化プロトコル（SSL/TLS）とサーバーでの厳格なアクセス制御を導入しています。</p>
 
             <h3>6. 子どものプライバシー保護</h3>
-            <p>Speed Gino2は、専門資格試験の対策を行う成人を対象としています。13歳未満のお子様から故意に個人情報を収集することはありません。万が一、誤って収集されたことが判明した場合は、直ちにシステムからデータを削除します。</p>
+            <p>Speed Gino2は、専門資格試験の対策を行う成人を対象としています。13歳未満のお子様から故意に個人情報を収集することはありません。</p>
 
             <h3>7. ポリシーの改定</h3>
             <p>本プライバシーポリシーは、新しい法的規制に対応するために随時改定されることがあります。変更は、このページに掲載された時点から効力を生じ、最新の更新日が表示されます。</p>
 
             <h3>8. お問い合わせおよびサポート窓口</h3>
             <p>個人情報の取り扱いに関するご質問、苦情、または削除の要請については、下記までご連絡ください：</p>
-            <ul>
+            <ul class="contact-list">
                 <li><strong>開発運営元:</strong> Speed Gino2 Development Team</li>
                 <li><strong>公式ウェブサイト:</strong> <a href="https://speedgino2.com/" target="_blank">https://speedgino2.com/</a></li>
                 <li><strong>サポートEメール:</strong> <a href="mailto:diendong94@gmail.com">diendong94@gmail.com</a></li>
@@ -397,9 +381,6 @@
 
     </div>
 
-    <!-- ================================================================= -->
-    <!-- ======================== PHẦN FOOTER TĨNH ======================= -->
-    <!-- ================================================================= -->
     <footer>
         <div class="footer-links">
             <a href="https://speedgino2.com/" target="_blank">Home Website</a> | 
@@ -409,7 +390,6 @@
             &copy; 2026 Speed Gino2. All rights reserved.
         </div>
         
-        <!-- Các khối tuyên bố miễn trừ dưới footer tương thích cơ chế đóng mở CSS -->
         <div id="disclaimer-vi" class="footer-disclaimer">
             Tuyên bố miễn trừ trách nhiệm: Speed Gino2 là ứng dụng hỗ trợ ôn luyện độc lập và không liên kết trực tiếp với bất kỳ cơ quan chính phủ hoặc tổ chức tổ chức thi chính thức nào của Nhật Bản.
         </div>
